@@ -56,6 +56,7 @@ def parser() -> argparse.ArgumentParser:
         ("fit", "run Fitkit (for example: fit cylinder 112)"),
         ("slice", "run Slice With Preview"),
         ("viewer", "run CadKit's viewer command"),
+        ("python", "run Python from the pinned CAD environment"),
     ):
         # The wrapped command owns all of its options, including --help.
         commands.add_parser(name, help=help_text, add_help=False)
@@ -75,3 +76,5 @@ def main(argv: list[str] | None = None) -> None:
         raise SystemExit(_run([str(_command("slice-with-preview")), *tool_args]))
     if args.command == "viewer":
         raise SystemExit(_run([sys.executable, "-m", "cadkit.viewer", *tool_args]))
+    if args.command == "python":
+        raise SystemExit(_run([sys.executable, *tool_args]))

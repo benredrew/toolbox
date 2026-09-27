@@ -25,6 +25,9 @@ cd toolbox
 ```
 
 `install` creates one Python 3.12 environment from the committed `uv.lock`.
+It also installs a safe `~/.local/bin/toolbox` shim (without replacing an
+unrelated command), so projects can invoke the pinned runtime by command
+rather than reaching into this checkout's `.venv`.
 `doctor` checks the three installed tools, the CAD runtime, PrusaSlicer,
 ImageMagick, and the local PrusaSlicer configuration. It does not open a
 design project, slice a model, or touch USB media.
@@ -37,6 +40,7 @@ presets you intend to use. `./toolbox doctor` reports what remains missing.
 
 ```bash
 ./toolbox fit cylinder 112
+toolbox python path/to/part.py
 ./toolbox viewer --name lamp-shade
 ./toolbox slice model.step \
   --printer "Original Prusa MINI & MINI+ Input Shaper" \

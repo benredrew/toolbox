@@ -9,4 +9,20 @@ if ! command -v uv >/dev/null 2>&1; then
 fi
 
 cd "$toolbox_root"
-exec uv sync --frozen
+uv sync --frozen
+
+# Projects invoke the Toolbox runtime by command, never by reaching into this
+# checkout's virtual environment.  Refuse to replace an unrelated command.
+toolbox_bin_dir="${XDG_BIN_HOME:-$HOME/.local/bin}"
+toolbox_command="$toolbox_bin_dir/toolbox"
+if [[ -e "$toolbox_command" || -L "$toolbox_command" ]]; then
+  if [[ "$(readlink -f -- "$toolbox_command")" != "$toolbox_root/toolbox" ]]; then
+    echo "toolbox: will not replace existing $toolbox_command" >&2
+    exit 1
+  fi
+else
+  mkdir -p "$toolbox_bin_dir"
+  ln -s "$toolbox_root/toolbox" "$toolbox_command"
+fi
+
+echo "toolbox: command available at $toolbox_command"
