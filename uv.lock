@@ -1011,8 +1011,8 @@ wheels = [
 
 [[package]]
 name = "prusa-cli-preview"
-version = "0.1.2"
-source = { git = "https://github.com/benredrew/prusa-cli-preview.git?rev=v0.1.2#fc05abb40e0a0bd2e726cf8e83dcf8aa3eb2cd66" }
+version = "0.1.3"
+source = { git = "https://github.com/benredrew/prusa-cli-preview.git?rev=v0.1.3#e9c250104aaf731128cbc2101042b5f2b4e2a6b7" }
 dependencies = [
     { name = "pybgcode" },
     { name = "vtk" },
@@ -1276,7 +1276,7 @@ wheels = [
 
 [[package]]
 name = "toolbox"
-version = "0.1.1"
+version = "0.1.2"
 source = { editable = "." }
 dependencies = [
     { name = "cadkit", extra = ["viewer"] },
@@ -1288,7 +1288,7 @@ dependencies = [
 requires-dist = [
     { name = "cadkit", extras = ["viewer"], git = "https://github.com/benredrew/cadkit.git?rev=v0.1.1" },
     { name = "fitkit", git = "https://github.com/benredrew/fitkit.git?rev=v0.1.1" },
-    { name = "prusa-cli-preview", git = "https://github.com/benredrew/prusa-cli-preview.git?rev=v0.1.2" },
+    { name = "prusa-cli-preview", git = "https://github.com/benredrew/prusa-cli-preview.git?rev=v0.1.3" },
 ]
 
 [[package]]
