@@ -42,14 +42,19 @@ presets you intend to use. `./toolbox doctor` reports what remains missing.
 ./toolbox fit cylinder 112
 toolbox python path/to/part.py
 ./toolbox viewer --name lamp-shade
+toolbox preview --port 3939 -- ./preview lamp_shade/shade.py
 ./toolbox slice model.step \
   --printer "Original Prusa MINI & MINI+ Input Shaper" \
   --filament DogPLA --output model.bgcode
 ```
 
-The viewer prints `CAD_VIEWER_PORT=<port>` when it starts. Export that value
-only for the build that should display there; CadKit's named reservation
-registry keeps concurrent viewers from being mixed up.
+Use `toolbox preview` for an interactive model preview. It starts (or reuses)
+the named viewer, opens its browser window, waits until the browser has
+registered with the viewer, then runs the supplied project command with
+`CAD_VIEWER_PORT` set. The model is therefore never sent to a splash screen.
+Use an explicit port/name for an agent-owned viewer; CadKit's reservation
+registry keeps concurrent viewers from being mixed up. `toolbox python` and
+project commands remain suitable for headless builds and do not open a GUI.
 
 Toolbox does not prescribe how a project stores its parts or specifications.
 It is the reusable toolchain beneath those projects.

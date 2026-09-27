@@ -107,8 +107,8 @@ wheels = [
 
 [[package]]
 name = "cadkit"
-version = "0.1.1"
-source = { git = "https://github.com/benredrew/cadkit.git?rev=v0.1.1#d9e94b940e4f19863001e58556df5e6de7d3d103" }
+version = "0.1.2"
+source = { git = "https://github.com/benredrew/cadkit.git?rev=v0.1.2#4b0e03ba1d2bce3d9bf0f1963c46aec824442ee8" }
 dependencies = [
     { name = "cadquery" },
 ]
@@ -388,8 +388,8 @@ wheels = [
 
 [[package]]
 name = "fitkit"
-version = "0.1.1"
-source = { git = "https://github.com/benredrew/fitkit.git?rev=v0.1.1#26a1d75b072d9e8e6e0a5be68ac41ee08799b184" }
+version = "0.1.2"
+source = { git = "https://github.com/benredrew/fitkit.git?rev=v0.1.2#de039f2814f97630a62f6ae0b1ff6f7f0f74a72c" }
 dependencies = [
     { name = "cadkit" },
     { name = "cadquery" },
@@ -1276,7 +1276,7 @@ wheels = [
 
 [[package]]
 name = "toolbox"
-version = "0.1.2"
+version = "0.1.3"
 source = { editable = "." }
 dependencies = [
     { name = "cadkit", extra = ["viewer"] },
@@ -1286,8 +1286,8 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "cadkit", extras = ["viewer"], git = "https://github.com/benredrew/cadkit.git?rev=v0.1.1" },
-    { name = "fitkit", git = "https://github.com/benredrew/fitkit.git?rev=v0.1.1" },
+    { name = "cadkit", extras = ["viewer"], git = "https://github.com/benredrew/cadkit.git?rev=v0.1.2" },
+    { name = "fitkit", git = "https://github.com/benredrew/fitkit.git?rev=v0.1.2" },
     { name = "prusa-cli-preview", git = "https://github.com/benredrew/prusa-cli-preview.git?rev=v0.1.3" },
 ]
 

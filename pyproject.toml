@@ -4,12 +4,12 @@ build-backend = "hatchling.build"
 
 [project]
 name = "toolbox"
-version = "0.1.2"
+version = "0.1.3"
 description = "A pinned, project-free CAD and fabrication toolchain"
 requires-python = ">=3.12,<3.13"
 dependencies = [
-  "cadkit[viewer] @ git+https://github.com/benredrew/cadkit.git@v0.1.1",
-  "fitkit @ git+https://github.com/benredrew/fitkit.git@v0.1.1",
+  "cadkit[viewer] @ git+https://github.com/benredrew/cadkit.git@v0.1.2",
+  "fitkit @ git+https://github.com/benredrew/fitkit.git@v0.1.2",
   "prusa-cli-preview @ git+https://github.com/benredrew/prusa-cli-preview.git@v0.1.3",
 ]
 
