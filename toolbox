@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+toolbox_root="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+exec uv run --project "$toolbox_root" --frozen toolbox "$@"
